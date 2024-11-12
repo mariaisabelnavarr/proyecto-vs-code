@@ -1,0 +1,28 @@
+assembly 
+
+section.data
+
+nombre db"maria isabel navarro herrera", 0
+id db "tu numero de identificacion", 0
+
+section .text
+     global _start
+
+_start:
+    ; mostrar nombre
+    mov edx, len nombre
+    mov ecx, nombre
+    mov ebx, 1
+    mov eax, 4
+    int 0x80
+
+    ; mostrar ID
+    mov edx, len id
+    mov ecx, id
+    mov ebx, 1
+    mov eax, 4
+    int 0x80
+
+    ; salir 
+    mov eax, 1
+    int 0x80
